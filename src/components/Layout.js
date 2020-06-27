@@ -5,6 +5,8 @@ import Navbar from '../components/Navbar'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
+import Scroll from './locomotiveScroll'
+import './locomotive-scroll.css'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
@@ -48,9 +50,14 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
+
+      {/* Here we pass the callbacks to the component. Anything that impacts the innerHeight, for example: Font Loaded */}
+      <Scroll />
+      <div id="container">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   )
 }

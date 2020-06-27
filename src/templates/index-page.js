@@ -17,6 +17,7 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <div
+      data-scroll data-scroll-speed="1"
       className="full-width-image margin-top-0"
       style={{
         backgroundImage: `url(${
@@ -36,7 +37,8 @@ export const IndexPageTemplate = ({
           flexDirection: 'column',
         }}
       >
-        <h1
+        <h1 
+          data-scroll data-scroll-speed="-1"
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
             boxShadow:
@@ -50,6 +52,7 @@ export const IndexPageTemplate = ({
           {title}
         </h1>
         <h3
+          data-scroll data-scroll-speed="-2"
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
             boxShadow:

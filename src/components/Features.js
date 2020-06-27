@@ -9,6 +9,7 @@ const FeatureGrid = ({ gridItems }) => (
         <section className="section">
           <div className="has-text-centered">
             <div
+              data-scroll data-scroll-speed=".25"
               style={{
                 width: '240px',
                 display: 'inline-block',
