@@ -1,5 +1,10 @@
+# You can find more info about this config file here:
+# https://www.netlifycms.org/docs/widgets/
+
 backend:
-  name: git-gateway
+  name: test-repo
+  # name: git-gateway
+
   branch: master
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
