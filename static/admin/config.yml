@@ -57,7 +57,8 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "authors-page"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}- file: "src/pages/about/index.md"
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
         fields:
