@@ -2,8 +2,8 @@
 # https://www.netlifycms.org/docs/widgets/
 
 backend:
-  # name: test-repo
-  # — make sure you have "git-gateway" in production mode
+  # name: test-repo 
+  # — make sure you have "git-gateway" enabled in production
   name: git-gateway
 
   branch: master

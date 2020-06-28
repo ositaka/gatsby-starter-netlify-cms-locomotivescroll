@@ -50,7 +50,7 @@ const AuthorsPage = ({ data }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
-        image={post.frontmatter.image}
+        // image={post.frontmatter.image}
         authors={post.frontmatter.authors}
       />
     </Layout>
