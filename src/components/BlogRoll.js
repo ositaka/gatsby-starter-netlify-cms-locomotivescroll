@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
+import _ from 'lodash'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class BlogRoll extends React.Component {
@@ -38,7 +39,12 @@ class BlogRoll extends React.Component {
                     </Link>
                     <span> &bull; </span>
                     <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
+                      {post.frontmatter.date} 
+                      <small> by{` `}
+                        <Link to={`/authors/${_.kebabCase(post.frontmatter.author)}`}>
+                          {post.frontmatter.author}
+                        </Link>
+                      </small>
                     </span>
                   </p>
                 </header>
@@ -82,6 +88,7 @@ export default () => (
                 slug
               }
               frontmatter {
+                author
                 title
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
