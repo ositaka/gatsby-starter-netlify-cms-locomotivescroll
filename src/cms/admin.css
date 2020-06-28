@@ -1,0 +1,6 @@
+div[class$="ImageWrapper-checkerboard"] {
+    display: flex;
+    margin-bottom: 0;
+}
+
+* { background: red!important }

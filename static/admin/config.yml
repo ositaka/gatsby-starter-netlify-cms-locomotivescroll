@@ -1,10 +1,11 @@
 # You can find more info about this config file here:
+# https://www.netlifycms.org/docs/configuration-options/
 # https://www.netlifycms.org/docs/widgets/
 
 backend:
-  name: test-repo 
+  # name: test-repo 
   # — make sure you have "git-gateway" enabled in production
-  # name: git-gateway
+  name: git-gateway
 
   branch: master
   commit_messages:
@@ -29,9 +30,9 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Author", name: "author", widget: "text"}
+      - {label: "Author", name: "author", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean", default: false}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
