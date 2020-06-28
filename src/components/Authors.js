@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import _ from 'lodash'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 const AuthorsList = ({ authors }) => (
@@ -19,9 +20,9 @@ const AuthorsList = ({ authors }) => (
               <PreviewCompatibleImage imageInfo={author} />
             </div>
           </div>
-          <h2 style={{
-              fontSize: "1.5em"
-          }}>{author.name}</h2>
+          <h2 style={{ fontSize: "1.5em" }}>
+            <Link to={`/authors/${_.kebabCase(author.name)}`}>{author.name}</Link>
+          </h2>
           <p>{author.bio}</p>
           <ul>
               <li><Link to={author.website}>{author.website}</Link></li>
