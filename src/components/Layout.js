@@ -8,7 +8,7 @@ import { withPrefix } from 'gatsby'
 import Scroll from './locomotiveScroll'
 import './locomotive-scroll.css'
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, location }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
@@ -52,7 +52,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
 
       {/* Here we pass the callbacks to the component. Anything that impacts the innerHeight, for example: Font Loaded */}
-      <Scroll />
+      <Scroll callbacks={location} />
       <div id="container">
         <Navbar />
         <main>{children}</main>
