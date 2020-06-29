@@ -9,7 +9,10 @@ import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 
 // Not reliably loaded by registerPreviewStyle, so import directly
-import "./admin.css"
+// import "./admin.css"
+
+import './cms-utils'
+
 
 
 CMS.registerMediaLibrary(uploadcare)
