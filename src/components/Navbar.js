@@ -36,6 +36,8 @@ const Navbar = class extends React.Component {
   }
 
   render() {
+    const { data } = this.props
+
     return (
       <header data-scroll data-scroll-sticky data-scroll-target="#container">
         <div className="header" style={{ transition: `transform 0.35s ease` }}>
@@ -83,7 +85,7 @@ const Navbar = class extends React.Component {
                   <Link className="navbar-item" to="/contact/examples">
                     Form Examples
                   </Link>
-                  <SearchBox />
+                  <SearchBox searchIndex={data.siteSearchIndex.index} />
                 </div>
                 <div className="navbar-end has-text-centered">
                   <a
@@ -116,10 +118,7 @@ const NavbarWithData = (props) => {
     `
   )
   return (
-    <>
-      <Navbar {...props} data={data} />
-      <SearchBox searchIndex={data.siteSearchIndex.index} />
-    </>
+    <Navbar {...props} data={data} />
   )
 }
 
