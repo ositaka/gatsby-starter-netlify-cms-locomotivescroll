@@ -1,11 +1,14 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
+import SearchBox from './SearchBox'
 
 const Navbar = class extends React.Component {
   constructor(props) {
     super(props)
+
+    this.data = props.data
     this.state = {
       active: false,
       navBarActiveClass: '',
@@ -80,6 +83,7 @@ const Navbar = class extends React.Component {
                   <Link className="navbar-item" to="/contact/examples">
                     Form Examples
                   </Link>
+                  <SearchBox />
                 </div>
                 <div className="navbar-end has-text-centered">
                   <a
@@ -102,4 +106,21 @@ const Navbar = class extends React.Component {
   }
 }
 
-export default Navbar
+const NavbarWithData = (props) => {
+  const data = useStaticQuery(graphql`
+      query SearchIndexQuery {
+        siteSearchIndex {
+          index
+        }
+      }
+    `
+  )
+  return (
+    <>
+      <Navbar {...props} data={data} />
+      <SearchBox searchIndex={data.siteSearchIndex.index} />
+    </>
+  )
+}
+
+export default NavbarWithData
